@@ -9,8 +9,8 @@
     <meta name="author" content="ppomi">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>일자리플랫폼 잡아바!</title>
-    <link href="css/style.css" rel="stylesheet" media="screen and (min-width:px)">
-    <link href="css/style_mobile.css" rel="stylesheet" media="screen and (max-width:px)">
+    <link href="css/style.css" rel="stylesheet" media="screen and (min-width:769px)">
+    <link href="css/style_mobile.css" rel="stylesheet" media="screen and (max-width:768px)">
     <link href="lib/fontawesome/css/font-awesome.min.css" rel="stylesheet">
 
     <script src="lib/jquery-1.12.4.min.js"></script>
@@ -24,26 +24,28 @@
 </head>
 
 <body>
-    <iv class="wrapper">
+    <div class="wrapper">
         <a href="#main" id="skip">본문 바로가기</a>
         <!-- start of header -->
         <header>
-            <div class="util_wrap">
-                <div class="outlink_wrap">
-                    <a href="https://www.gjf.or.kr/gjf/index.do" class="text_hide" target="_blank">경기도일자리재단</a>
-                    <a href="https://www.dream.go.kr/dream/index.do" class="text_hide" target="_blank">꿈날개</a>
-                </div>
-                <div class="util_menu">
-                    <a href="#">로그인</a>
-                    <a href="#">고객센터</a>
-                    <a href="#">이벤트</a>
+            <div class="util_align">
+                <div class="util_wrap clear_fix">
+                    <div class="outlink_wrap cleaf_fix">
+                        <a href="https://www.gjf.or.kr/gjf/index.do" class="gjf text_hide" target="_blank">경기도일자리재단</a>
+                        <a href="https://www.dream.go.kr/dream/index.do" class="dream text_hide" target="_blank">꿈날개</a>
+                    </div>
+                    <div class="util_menu">
+                        <a href="#">로그인</a>
+                        <a href="#">고객센터</a>
+                        <a href="#">이벤트</a>
+                    </div>
                 </div>
             </div>
-            <div class="search_wrap">
+            <div class="search_wrap cleaf_fix">
                 <div class="logo_wrap">
                     <h1 id="logo"><a href="index.html" class="text_hide">잡아바</a></h1>
                 </div>
-                <div class="search_wrapper">
+                <div class="search_con">
                     <div class="search_top">
                         <div class="rank_wrap">
                             <ul>
@@ -64,12 +66,12 @@
                         </div>
                     </div>
                     <div class="search_box">
-                        <form>
-                            <input type="search" name="search" id="search"><input type="submit" value="검색">
+                        <form class="clear_fix">
+                            <input type="search" name="search" id="search"><input type="submit" id="search_btn" value="검색">
                         </form>
                     </div>
                 </div>
-                <div class="quick_menu">
+                <div class="quick_menu clear_fix">
                     <a href="https://www.jobaba.net/empmn/empmnList.do?srchClCd=31" class="text_hide">공공일자리</a>
                     <a href="https://www.jobaba.net/empmn/desEnt.do" class="text_hide">탐나는기업</a>
                     <a href="#" class="text_hide">이용가이드</a>
@@ -201,7 +203,7 @@
                         </a>
                     </div>
                     <ul class="img_des">
-                        <li><a href="#">2019 새해 달라진 주거정책 알려드</a></li>
+                        <li><a href="#">2019 새해 달라진 주거정책 알려드림</a></li>
                         <li><a href="#">청년내일채움공제</a></li>
                         <li><a href="#">2019년 경기산업기술교육센터 취업교육생 모집</a></li>
                     </ul>
@@ -239,7 +241,7 @@
                     <div class="recommend_box">
                         <a href="#">
                             <div class="img_wrap">
-                                <img src="img/recommend_03.png" alt="지역주도형 청년 일자리 사업 참여 청년·기업 모집">
+                                <img src="img/recommend_03.jpg" alt="지역주도형 청년 일자리 사업 참여 청년·기업 모집">
                             </div>
                             <p>지역주도형 청년 일자리 사업 참여 청년·기업 모집</p>
                             <div class="date_box">
@@ -252,7 +254,7 @@
                     <div class="recommend_box">
                         <a href="#">
                             <div class="img_wrap">
-                                <img src="img/recommend_04.png" alt="금융 AI챗봇 구축 및 활용사례">
+                                <img src="img/recommend_04.jpg" alt="금융 AI챗봇 구축 및 활용사례">
                             </div>
                             <p>금융 AI챗봇 구축 및 활용사례</p>
                             <div class="date_box">
@@ -265,7 +267,7 @@
                     <div class="recommend_box">
                         <a href="#">
                             <div class="img_wrap">
-                                <img src="img/recommend_05.png" alt="안산 919 취업광장">
+                                <img src="img/recommend_05.jpg" alt="안산 919 취업광장">
                             </div>
                             <p>안산 919 취업광장</p>
                             <div class="date_box">
@@ -863,7 +865,7 @@
             </div>
         </footer>
         <!-- End of footer -->
-    </iv>
+    </div>
 </body>
 
 </html>

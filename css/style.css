@@ -2,5 +2,57 @@
 @import url("reset.css");
 
 /* common */
+header{width:100%;height:193px;}
+.util_align{width:100%;height:40px;border-bottom:1px solid #eeeeee;box-sizing:border-box;}
+.util_wrap{width:1080px;height:100%;margin:auto;}
+.util_wrap .outlink_wrap{float:left;}
+.util_wrap .outlink_wrap a{display:block;margin-top:8px;float:left;}
+.util_wrap .outlink_wrap .gjf{width:113px;height:25px;background:url(../img/common/gjf_icon.png) no-repeat center center;}
+.util_wrap .outlink_wrap .dream{width:58px;height:25px;background:url(../img/common/dream_icon.png) no-repeat center center;}
+.util_wrap .util_menu{float:right;}
+.util_wrap .util_menu a{display:inline-block;font-size:13px;line-height:13px;color:#777777;margin-top:14px;margin-left:5px;}
+.util_wrap .util_menu a::after{content:'|';margin-left:10px;}
+.util_wrap .util_menu a:last-child::after{display:none;}
+.search_wrap{width:1080px;height:101px;margin:auto;padding:10px 0px;box-sizing:border-box;}
+.search_wrap .logo_wrap{float:left;}
+#logo{width:143px;height:70px;margin-top:11px;}
+#logo a{display:block;width:100%;height:100%;background:url(../img/common/index_logo.png);background-size:cover;}
+.search_wrap .search_con{width:360px;height:73px;padding-top:8px;margin-left:36px;float:left;}
+.search_wrap .search_top{position:relative;}
+.search_wrap .rank_wrap{width:100%;height:23px;overflow:hidden;}
+.search_wrap .rank_wrap a{display:inline-block;font-size:14px;line-height:23px;}
+.search_wrap .rank_wrap span{display:inline-block;height:23px;color:#ffffff;padding:0px 6px;margin-right:5px;background:#010101;}
+.search_wrap .mall_link{position:absolute;top:0px;right:0px;width:128px;height:22px;}
+.search_wrap .mall_link a{display:block;width:100%;height:100%;background:url(../img/common/quick_btn3.gif) no-repeat center center;}
+.search_wrap .search_box{width:100%;height:40px;margin-top:10px;}
+#search{display:block;width:300px;height:40px;border:2px solid #010101;padding:0px 8px;box-sizing:border-box;float:left;}
+#search_btn{display:block;width:60px;height:40px;background:#010101;border:none;font-size:16px;line-height:40px;color:#ffffff;text-align:center;float:left;}
+.quick_menu{margin-top:18px;float:right;}
+.quick_menu a{display:block;width:73px;height:60px;background:url(../img/common/ico_top_gnb03.gif);float:left;}
+.quick_menu a:nth-child(2){background-position:center;}
+.quick_menu a:nth-child(3){background-position:right;}
+.gnb{width:100%;height:50px;border-top:1px solid #c7c7c7;border-bottom:1px solid #c7c7c7;}
+.gnb>ul{width:1080px;height:100%;margin:auto;}
+.gnb>ul>li{width:132px;height:100%;float:left;}
+.gnb>ul>li>a{display:block;width:100%;height:100%;background:url(../img/common/main_nav02.gif)}
+.gnb>ul>li>a:hover{background-position-y:50px;}
+.gnb>ul>li:nth-child(2)>a{background-position-x:-132px;}
+.gnb>ul>li:nth-child(3)>a{background-position-x:-262px;}
+.gnb>ul>li:nth-child(4)>a{background-position-x:-392px;}
+.gnb>ul>li:nth-child(5)>a{background-position-x:-523px;}
+.gnb>ul>li:nth-child(6)>a{background-position-x:-653px;}
+.gnb>ul>li:nth-child(7)>a{background-position-x:-785px;}
+.gnb>ul>li:nth-child(8)>a{width:164px;background-position-x:-915px;}
+.gnb .sub{display:none;}
+
+#fixed_arrow{display:none;}
 
 /* index */
+.main_visual_wrap{width:100%;height:330px;overflow:hidden;}
+.main_visual_wrap .main_visual{position:relative;width:100%;height:100%;}
+.main_visual_wrap .main_visual>.img_wrap>a{display:block;width:100%;height:100%;}
+.main_visual_wrap .main_visual>.img_wrap>a>img{display:block;height:100%;margin:auto;}
+.main_visual_wrap .main_visual>.img_wrap>a:nth-child(1){background-color:#5dd478;}
+.main_visual_wrap .main_visual .img_des{position:absolute;bottom:10px;left:50%;margin-left:260px;width:280px;height:290px;background:#ffffff;padding:10px;box-sizing:border-box;border-radius:6px;box-shadow:1px 1px 10px rgba(0,0,0,.2);}
+.main_visual_wrap .main_visual .img_des li a{display:block;width:100%;height:32px;font-size:12px;line-height:32px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.recommend_wrap{width:1080px;margin:auto;}
