@@ -62,4 +62,38 @@ $(function(){
     $('.mo_search_btn').on('click', function(){
         $('.search_con').slideToggle();
     });
+    $('.sidebar_btn').on('click', function(){
+        $('.mask').css({'display': 'block'});
+        $('.side_nav').animate({'margin-right': '0%'}, 500);
+        $('body').css({'overflow': 'hidden'});
+    });
+    $('.close_btn').on('click', function(){
+        $('.side_nav').animate({'margin-right': '-60%'}, 500);
+        $('.mask').css({'display': 'none'});
+        $('body').css({'overflow': 'auto'});
+    });
+});
+//모바일 카테코리 콘텐츠 동작
+$(function(){
+    $('.mo_cate_btn a').on('click', function(){
+        var index = $(this).index();
+        $('.mo_cate_btn a').removeClass('on');
+        $(this).addClass('on');
+        $('.cate_wrap').removeClass('on');
+        $('.cate_wrap').eq(index).addClass('on');
+    });
+    $('.mo_cate_title a').on('click', function(){
+        var index = $(this).index();
+        if(index === 0){
+            $(this).next().removeClass('on');
+            $(this).addClass('on');
+            $(this).parents('.cate_box_row').find('.cate_board_wrap').removeClass('on');
+            $(this).parents('.cate_box_row').find('.cate_board_wrap:eq(0)').addClass('on');
+        }else{
+            $(this).prev().removeClass('on');
+            $(this).addClass('on');
+            $(this).parents('.cate_box_row').find('.cate_board_wrap').removeClass('on');
+            $(this).parents('.cate_box_row').find('.cate_board_wrap:eq(1)').addClass('on');
+        }
+    });
 });
