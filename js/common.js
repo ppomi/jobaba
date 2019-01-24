@@ -70,7 +70,7 @@ $(function(){
     $('.close_btn').on('click', function(){
         $('.side_nav').animate({'margin-right': '-60%'}, 500);
         $('.mask').css({'display': 'none'});
-        $('body').css({'overflow-y': 'auto'});
+        $('body').css({'overflow': 'auto', 'overflow-x': 'hidden'});
     });
 });
 //모바일 메인비주얼 슬라이드 동작
