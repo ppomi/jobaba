@@ -2,6 +2,7 @@
 @import url("reset.css");
 @import url("http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
 
+body{overflow-x:hidden;}
 html{font-family:'Spoqa Han Sans','Spoqa Han Sans JP','Sans-serif';font-weight:400;
     /* Support for all WebKit browsers. */-webkit-font-smoothing:antialiased;
     /* Support for Safari and Chrome. */text-rendering:optimizeLegibility;
@@ -14,7 +15,7 @@ html{font-family:'Spoqa Han Sans','Spoqa Han Sans JP','Sans-serif';font-weight:4
 #logo a{display:block;width:100%;height:100%;background:url(../img/common/index_logo.png);background-size:cover;}
 .search_wrap .mo_btn_wraps{position:absolute;top:15px;right:15px;width:70px;height:30px;}
 .search_wrap .mo_btn_wraps a{display:inline-block;width:30px;height:30px;}
-.search_wrap .mo_btn_wraps .mo_search_btn{background:url(../img/common/search_btn.png) no-repeat center center;}
+.search_wrap .mo_btn_wraps .mo_search_btn{margin-left:5px;background:url(../img/common/search_btn.png) no-repeat center center;}
 .search_wrap .mo_btn_wraps .sidebar_btn{background:url(../img/common/sidebar_btn.png) no-repeat center center;}
 .search_wrap .search_con{display:none;width:100%;height:73px;margin-top:10px;}
 .search_wrap .search_top{position:relative;}
@@ -58,10 +59,13 @@ footer{background:#f0f0f0;font-size:12px;}
 .addr_copy_wrap{padding:15px;}
 
 /* index */
-.mo_main_visual_wrap{width:100%;min-height:25vh;overflow:hidden;}
-.mo_main_visual_wrap .img_wrap{width:700vw;}
-.mo_main_visual_wrap .img_wrap a{display:block;width:auto;float:left;}
-.mo_main_visual_wrap .img_wrap a img{display:block;width:100vw;}
+.mo_main_visual_wrap{position:relative;width:100%;overflow:hidden;}
+.mo_main_visual_wrap .img_wrap{position:absolute;top:0px;left:0px;width:100%;}
+.mo_main_visual_wrap .img_wrap a{position:absolute;top:0px;left:0px;display:none;width:100%;}
+.mo_main_visual_wrap .img_wrap a img{display:block;width:100%;}
+.mo_main_visual_wrap .img_dots{position:absolute;bottom:20px;left:20px;}
+.mo_main_visual_wrap .img_dots a{display:inline-block;width:10px;height:10px;background:rgba(0,0,0,0.5);border-radius:5px;margin-right:5px;cursor:pointer;}
+.mo_main_visual_wrap .img_dots a.on{background:#000000;}
 .mo_cate_wrap{padding:0px 10px;}
 .mo_cate_wrap h3{font-size:18px;color:#666666;padding:20px 0px 15px 5px;}
 .mo_cate_wrap .mo_cate_btn{width:100%;height:33px;}
@@ -81,9 +85,9 @@ footer{background:#f0f0f0;font-size:12px;}
 .cate_board li::before{position:absolute;bottom:20px;left:7px;content:'';width:2px;height:2px;background:#5c5c5c;border-radius:2px;}
 .cate_board li a{display:inline-block;width:100%;font-size:14px;line-height:15px;padding:10px 15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;box-sizing:border-box;}
 .cate_box_row.mo_swipe{width:200vw;padding:0px 15px;margin-top:20px;margin-bottom:30px;}
-.cate_box{width:150px;height:181px;margin-right:10px;float:left;}
-.cate_box .img_wrap{width:150px;margin-bottom:10px;}
-.cate_box .img_wrap img{width:100%;}
+.cate_box{width:20%;height:181px;margin-right:10px;float:left;}
+.cate_box .img_wrap{width:100%;height:100px;margin-bottom:10px;}
+.cate_box .img_wrap img{width:100%;height:100%;}
 .cate_box .img_des{position:relative;min-height:30px;font-size:15px;color:#5d5d5d;padding-left:10px;overflow:hidden;}
 .cate_box .img_des::before{position:absolute;top:10px;left:4px;content:'';width:2px;height:2px;background:#5c5c5c;border-radius:2px;}
 .join_login_wrap{background:url(../img/common/mo_app_logo.png) no-repeat 20px 50%;background-color:#f2f4f5;background-size:17%;border-top:1px solid #dddddd;border-bottom:1px solid #dddddd;}
