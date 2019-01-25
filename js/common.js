@@ -17,7 +17,7 @@ $(function(){
 });
 //gnb메뉴 동작
 $(function(){
-    $('.gnb>ul>li>a').on('mouseenter', function(){
+    $('.gnb>ul>li>a').on('mouseenter focus', function(){
         $('.gnb .sub').removeClass('on');
         $(this).next().addClass('on');
     });
@@ -27,7 +27,7 @@ $(function(){
 });
 //메인비주얼 슬라이드 동작
 $(function(){
-    $('.main_visual .img_des a').on('mouseover', function(){
+    $('.main_visual .img_des a').on('mouseover focus', function(){
         var index = $(this).parent().index();
         $('.main_visual .img_des a').removeClass('on');
         $(this).addClass('on');
@@ -66,11 +66,12 @@ $(function(){
         $('.mask').css({'display': 'block'});
         $('.side_nav').animate({'margin-right': '0%'}, 500);
         $('body').css({'overflow': 'hidden'});
+        $('.side_nav_wrap').before('<div id="mask"></div>');
     });
     $('.close_btn').on('click', function(){
         $('.side_nav').animate({'margin-right': '-60%'}, 500);
-        $('.mask').css({'display': 'none'});
         $('body').css({'overflow': 'auto', 'overflow-x': 'hidden'});
+        $('#mask').remove();
     });
 });
 //모바일 메인비주얼 슬라이드 동작
@@ -116,7 +117,7 @@ $(function(){
         if (isTimerOn === true) {
             timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
         }
-    }
+    }    
 });
 //모바일 카테코리 콘텐츠 동작
 $(function(){
