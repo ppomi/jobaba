@@ -57,6 +57,34 @@ $(function(){
         $('html, body').animate({'scrollTop': $(document).height()}, 400);
     });
 });
+//찜하기 동작
+$(function(){
+    $('.content_box .heart').on('click', function(){
+        $(this).toggleClass('on');
+    });
+});
+//기회 더 보기 동작
+$(function(){
+    var length = $('.content_list_wrap .content_box').length;
+    var half = length / 2;
+    var now_show = 0;
+    $('.content_list_wrap .content_box').hide();
+    for(i=0;i<half;i++){
+        $('.content_list_wrap .content_box').eq(i).show();
+        now_show = half-1;
+    }
+    $('.content_more_wrap a').on('click', function(){
+        if(now_show >= (length-1)) return false;
+        else{    
+            for(i=1;i<=5;i++){
+                var now_index = 0;
+                now_index = i+now_show;
+                $('.content_list_wrap .content_box').eq(now_index).show();
+            }
+            now_show = now_index;
+        }
+    });
+});
 //모바일 헤더 버튼 동작
 $(function(){
     $('.mo_search_btn').on('click', function(){
@@ -143,3 +171,77 @@ $(function(){
         }
     });
 });
+//모바일 카테고리 스와이프
+function setImageSwipe(selector, first) {
+    var numSlide = $(selector).find('.cate_box').length;
+    var slideNow = 0;
+    var slidePrev = 0;
+    var slideNext = 0;
+    var slideFirst = first;
+    var startX = 0;
+    var startY = 0;
+    var delX = 0;
+    var delY = 0;
+    var offsetX = 0;
+    var isDraggable = false;
+    var direction = '';
+
+    $(selector).find('.cate_box').each(function(i) {
+        $(this).css({'left': (i * 100) + '%', 'display': 'block'});
+    });
+    showSlide(slideFirst);
+    
+    $(selector).find('.slide').on('touchstart', function(e) {
+        $(this).css({'transition': 'none'});
+        isDraggable = true;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        offsetX = $(this).position().left;
+    });
+    
+    document.addEventListener('touchmove', function(e) {
+        console.log(direction);
+        if (isDraggable === false) return false;
+        delX = e.touches[0].clientX - startX;
+        delY = e.touches[0].clientY - startY;
+        console.log(direction);
+        if (direction === '') {
+            if ((Math.abs(delX) > 5) && (Math.abs(delX) > Math.abs(delY))) {
+                direction = 'horizon';
+            } else if ((Math.abs(delY) > 5) && (Math.abs(delX) < Math.abs(delY))) {
+                direction = 'vertical';
+            } else {
+                direction = '';
+            }
+        } else if (direction === 'horizon') {
+            e.preventDefault();
+            if ((delX > 0 && slideNow === 1) || (delX < 0 && slideNow === numSlide)) {
+                delX = delX / 10;
+            }
+            $(selector).find('.slide').css({'left': (offsetX + delX) + 'px'});
+        } else if (direction === 'vertical') {
+            delX = 0;
+        }
+    }, {passive: false});
+    
+    $(document).on('touchend', function() {
+        if (isDraggable === true) {
+            if (delX < -50 && slideNow !== numSlide) {
+                showSlide(slideNext);
+            } else if (delX > 50 && slideNow !== 1) {
+                showSlide(slidePrev);
+            } else {
+                showSlide(slideNow);
+            }
+            isDraggable = false;
+            direction = '';
+        }
+    });
+
+    function showSlide(n) {
+        $(selector).find('.slide').css({'transition': 'left 0.5s', 'left': -((n - 1) * 26) + '%'});
+        slideNow = n;
+        slidePrev = (n - 1) < 1 ? numSlide : n - 1;
+        slideNext = (n + 1) > numSlide ? 1 : n + 1;
+    }
+}  
