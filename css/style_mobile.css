@@ -105,6 +105,7 @@ footer{background:#f0f0f0;font-size:12px;}
 .category_wrap{width:66%;height:100%;padding:10px 0px 0px 15px;border-right:1px solid #e0e0e0;box-sizing:border-box;float:left;}
 .category_wrap>a{display:block;width:100%;height:100%;font-weight:700;background:url(../img/html/list_arrow.png) no-repeat 95% 8px;}
 .category_wrap ul{display:none;position:absolute;left:0px;width:66%;max-height:300px;border:1px solid #dddddd;background:#ffffff;overflow:auto;box-sizing:border-box;z-index:10;}
+.category_wrap ul.on{display:block;}
 .category_wrap ul li{padding:3px 0px;}
 .category_wrap ul li a{display:block;font-size:14px;padding:8px 15px;}
 .category_wrap ul li a:hover{color:#ffffff;background:#6bc4de;}

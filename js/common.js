@@ -85,6 +85,18 @@ $(function(){
         }
     });
 });
+//지원정책 서브메뉴 동작
+$(function(){
+    $('.select_title').on('click', function(){
+        $(this).next().toggleClass('on');
+    });
+    $('.area_all').on('click', function(){
+        $(this).next().toggleClass('hidden_area_wrap');
+    });
+    $('.category_wrap>.mo').on('click', function(){
+        $(this).next().toggleClass('on');
+    });
+});
 //모바일 헤더 버튼 동작
 $(function(){
     $('.mo_search_btn').on('click', function(){

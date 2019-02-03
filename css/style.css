@@ -265,7 +265,8 @@ header{width:100%;height:193px;}
 .support_policy_wrap .category_wrap li span{padding-left:5px;}
 .support_policy_wrap .select_wrap{color:#666666;padding-bottom:10px;border-bottom:2px solid #474747;}
 .support_policy_wrap .select_wrap .select_title{position:relative;display:block;font-weight:700;color:#3e332e;padding:10px;padding-left:0px;background:url(../img/html/list_arrow.png) no-repeat 200px 15px;border-bottom:1px solid #c7c7c7;}
-.support_policy_wrap .select_wrap .sub_select{padding:10px 0px;border-bottom:1px solid #c7c7c7;}
+.support_policy_wrap .select_wrap .sub_select{display:none;padding:10px 0px;border-bottom:1px solid #c7c7c7;}
+.support_policy_wrap .select_wrap .sub_select.on{display:block;}
 .support_policy_wrap label input[type="checkbox"]{position:absolute;left:-9999px;width:18px;height:18px;opacity:0;z-index:12;}
 .support_policy_wrap label span::before{display:inline-block;content:'';width:16px;height:16px;margin-right:5px;margin-bottom:2px;background:#fafafa;border:1px solid #c8c8c8;border-radius:0px;box-shadow:0px 1px 2px rgba(0,0,0,0.05);vertical-align:middle;cursor:pointer;}
 .support_policy_wrap .select_wrap .area_all{position:relative;display:block;padding:10px;padding-right:0px;border:1px solid #bababa;cursor:pointer;}
