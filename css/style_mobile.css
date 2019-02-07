@@ -113,10 +113,13 @@ footer{background:#f0f0f0;font-size:12px;}
 .mo_filter_btn a{display:block;width:30%;height:100%;font-size:14px;line-height:44px;background:url(../img/html/filter_btn.png) no-repeat 90% center;float:right;background-size:14px;}
 .select_filter_wrap{display:none;padding:15px;background:#ffffff;}
 .select_filter_wrap .select_wrap{padding-bottom:10px;border-bottom:2px solid #474747;}
+.select_filter_wrap label input[type="checkbox"]{position:absolute;left:-9999px;width:18px;height:18px;opacity:0;z-index:12;}
+.select_filter_wrap label span::before{display:inline-block;content:'';width:16px;height:16px;margin-right:5px;margin-bottom:2px;background:#fafafa;border:1px solid #c8c8c8;border-radius:0px;box-shadow:0px 1px 2px rgba(0,0,0,0.05);vertical-align:middle;cursor:pointer;}
+.select_filter_wrap label input[type="checkbox"]:checked ~ span::before{content:url(../img/common/check.png);background:#5cb85c;color:#ffffff;border:1px solid #3d8b3d;}
 .select_filter_wrap .button_wrap{padding-top:20px;}
-.support_policy_wrap .button_wrap a{display:block;width:48%;font-size:16px;text-align:center;padding:12px 0px;border:1px solid #155cc6;}
-.support_policy_wrap .button_wrap .reset{float:left;color:#155cc6;background:#ffffff;}
-.support_policy_wrap .button_wrap .apply{float:right;color:#ffffff;background:#155cc6;}
+.select_filter_wrap .button_wrap a{display:block;width:48%;font-size:16px;text-align:center;padding:12px 0px;border:1px solid #155cc6;}
+.select_filter_wrap .button_wrap .reset{float:left;color:#155cc6;background:#ffffff;}
+.select_filter_wrap .button_wrap .apply{float:right;color:#ffffff;background:#155cc6;}
 .select_filter_wrap .select_wrap>ul>li>a{display:block;font-size:18px;padding:10px 10px 10px 0px;}
 .select_filter_wrap .select_wrap>ul>li>ul{padding:10px 0px;border-bottom:1px solid #c7c7c7;}
 .select_filter_wrap .select_wrap>ul>li:last-child>ul{border-bottom:none;}
