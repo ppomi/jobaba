@@ -66,7 +66,7 @@ $(function(){
 //기회 더 보기 동작
 $(function(){
     var length = $('.content_list_wrap .content_box').length;
-    var half = length / 2;
+    var half = 5;
     var now_show = 0;
     $('.content_list_wrap .content_box').hide();
     for(i=0;i<half;i++){
@@ -182,6 +182,9 @@ $(function(){
             $(this).parents('.cate_box_row').find('.cate_board_wrap:eq(1)').addClass('on');
         }
     });
+    $('.mo_filter_btn a').on('click', function(){
+        $('.select_filter_wrap').slideToggle();
+    });
 });
 //모바일 카테고리 스와이프
 function setImageSwipe(selector, first) {
@@ -257,3 +260,63 @@ function setImageSwipe(selector, first) {
         slideNext = (n + 1) > numSlide ? 1 : n + 1;
     }
 }  
+//모바일 잡학사전 슬라이드 동작
+$(function(){
+    var slide = $('.dic_slide_wrap .dic_slide .slide');
+    var dots = $('.dic_slide_wrap .dic_slide_dots .dic_slide_dot');
+    var numSlide = slide.length;
+    var slideNow = 0;
+    var slidePrev = 0;
+    var slideNext = 0;
+    var slideStart = 1;
+    var timerId = 0;
+    var isTimerOn = true;
+    var timerSpeed = 3000;
+    slide.each(function(i) {
+        $(this).css({'left': (i * 100) + '%', 'display': 'block'});
+    });
+    showSlide(slideStart);
+    dots.on('click', function() {
+        var index = $(this).index();
+        showSlide(index + 1);
+    });
+    $('.dic_slide_arrow .prev').on('click', function() {
+        showSlide(slidePrev);
+    });
+    $('.dic_slide_arrow .next').on('click', function() {
+        showSlide(slideNext);
+    });
+    function showSlide(n) {
+        clearTimeout(timerId);
+        if (slideNow === 0) {
+            slide.parent().css({'transition': 'none', 'left': -((n - 1) * 100) + '%'});
+        } else {
+            slide.parent().css({'transition': 'left 0.5s', 'left': -((n - 1) * 100) + '%'});
+        }
+        dots.removeClass('on');
+        dots.eq(n - 1).addClass('on');
+        slideNow = n;
+        slidePrev = (n - 1) < 1 ? numSlide : n - 1;
+        slideNext = (n + 1) > numSlide ? 1 : n + 1;
+        if (isTimerOn === true) {
+            timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
+        }
+    }
+});
+//모바일 잡학사전 콘텐츠 동작
+$(function(){
+    $('.thema_info_tab .tab').on('click', function(){
+        var index = $(this).parent().index();
+        $('.thema_info_tab .tab').removeClass('on');
+        $(this).addClass('on');
+        $('.thema_info_con').removeClass('on');
+        $('.thema_info_con').eq(index).addClass('on');
+    });
+    $('.thema_dic_tabs a').on('click', function(){
+        var index = $(this).parent().index();
+        $('.thema_dic_tabs a').removeClass('on');
+        $(this).addClass('on');
+        $('.thema_dic_boxs').removeClass('on');
+        $('.thema_dic_boxs').eq(index).addClass('on');
+    });
+});
