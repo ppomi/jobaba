@@ -13,3 +13,24 @@ li,ol,ul{list-style:none;}
 /* 본문바로가기 */
 #skip{position:fixed;top:-41px;left:0px;width:100%;font-size:16px;color:#ffffff;line-height:40px;text-align:center;background:rgba(0, 0, 0, 0.6);border-bottom:1px solid #ffffff;z-index:10000;transition:top 0.3s;}
 #skip:focus{top:0px;}
+/* 스포카 한 산스 폰트 */
+@font-face{
+	font-family:'Spoqa Han Sans';
+	src:url('../lib/fonts/SpoqaHanSansRegular.eot');
+	src:url('../lib/fonts/SpoqaHanSansRegular.eot?#iefix') format('embedded-opentype'),
+	url('../lib/fonts/SpoqaHanSansRegular.woff') format('woff'),
+	url('../lib/fonts/SpoqaHanSansRegular.woff2') format('woff2'),
+	url('../lib/fonts/SpoqaHanSansRegular.ttf') format('truetype');
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face{
+	font-family:'Spoqa Han Sans';
+	src:url('../lib/fonts/SpoqaHanSansBold.eot');
+	src:url('../lib/fonts/SpoqaHanSansBold.eot?#iefix') format('embedded-opentype'),
+	url('../lib/fonts/SpoqaHanSansBold.woff') format('woff'),
+	url('../lib/fonts/SpoqaHanSansBold.woff2') format('woff2'),
+	url('../lib/fonts/SpoqaHanSansBold.ttf') format('truetype');
+	font-weight:300;
+	font-style:normal;
+}
