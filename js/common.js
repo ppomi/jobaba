@@ -40,14 +40,14 @@ $(function(){
     $(window).on('scroll', function(){
         var winTop = $(window).scrollTop();
         if(winTop > 500){
-            $('#fixed_arrow .up').css({'opacity': '1'});
+            $('#fixed_arrow .up').css({'display': 'block'});
         }else{
-            $('#fixed_arrow .up').css({'opacity': '0'});
+            $('#fixed_arrow .up').css({'display': 'none'});
         }
         if (($(document).height() - 1000) < winTop){
-            $('#fixed_arrow .down').css({'opacity': '0'});
+            $('#fixed_arrow .down').css({'display': 'none'});
         } else {
-            $('#fixed_arrow .down').css({'opacity': '1'});
+            $('#fixed_arrow .down').css({'display': 'block'});
         }
     });
     $('#fixed_arrow .up').on('click', function(){
