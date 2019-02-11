@@ -66,23 +66,27 @@ $(function(){
 //기회 더 보기 동작
 $(function(){
     var length = $('.content_list_wrap .content_box').length;
-    var half = 5;
     var now_show = 0;
     $('.content_list_wrap .content_box').hide();
-    for(i=0;i<half;i++){
+    for(i=0;i<5;i++){
         $('.content_list_wrap .content_box').eq(i).show();
-        now_show = half-1;
+        now_show = 5;
     }
     $('.content_more_wrap a').on('click', function(){
-        if(now_show >= (length-1)) return false;
+        if(now_show >= length) return false;
         else{    
-            for(i=1;i<=5;i++){
+            for(i=0;i<=5;i++){
                 var now_index = 0;
                 now_index = i+now_show;
-                $('.content_list_wrap .content_box').eq(now_index).show();
+                if($('.content_list_wrap .content_box').eq(now_index).length){                    
+                    $('.content_list_wrap .content_box').eq(now_index).show();
+                }else{
+                    break;
+                }
             }
-            now_show = now_index;
         }
+        now_show = now_index;
+        console.log(now_show);
     });
 });
 //지원정책 서브메뉴 동작
