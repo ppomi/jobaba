@@ -107,16 +107,22 @@ $(function(){
         $('.search_con').slideToggle();
     });
     $('.sidebar_btn').on('click', function(){
+        $('.close_btn').trigger('focus');
         $('.mask').css({'display': 'block'});
         $('.side_nav').animate({'margin-right': '0%'}, 500);
         $('body').css({'overflow': 'hidden'});
         $('.side_nav_wrap').before('<div id="mask"></div>');
+        $('.side_nav').append('<a href="#" class="return"></a>');
+        $('.return').on('focus', function(){
+            $('.close_btn').trigger('focus');
+        });
     });
     $('.close_btn').on('click', function(){
         $('.side_nav').animate({'margin-right': '-60%'}, 500);
         $('body').css({'overflow': 'auto', 'overflow-x': 'hidden'});
         $('#mask').remove();
-    });
+        $('.util_wrap').find('.return').remove();
+    });    
 });
 //모바일 메인비주얼 슬라이드 동작
 $(function(){
